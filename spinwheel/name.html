@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter Name</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="center bg">
+
+  <h2>Enter first 3 letters of your name</h2>
+
+  <input id="playerName" maxlength="3" placeholder="e.g. jam, fer">
+
+  <br><br>
+
+  <button class="btn" onclick="go()">Find Out</button>
+
+  <script>
+    function go() {
+      const short = playerName.value.toLowerCase();
+      if (short.length !== 3) {
+        alert("Please enter exactly 3 letters");
+        return;
+      }
+      localStorage.setItem("playerShort", short);
+      location.href = "wheel.html";
+    }
+  </script>
+
+</body>
+</html>
