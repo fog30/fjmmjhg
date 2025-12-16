@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Results</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="center bg">
+
+  <h2>🎄 Secret Santa Results 🎄</h2>
+  <ul id="list"></ul>
+
+  <script>
+    const pairs = JSON.parse(localStorage.getItem("secretSantaPairs")) || {};
+    const list = document.getElementById("list");
+
+    for (let p in pairs) {
+      let li = document.createElement("li");
+      li.innerText = p + " ➜ " + pairs[p];
+      list.appendChild(li);
+    }
+  </script>
+
+</body>
+</html>
